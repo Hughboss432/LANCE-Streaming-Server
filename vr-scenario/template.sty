@@ -1,0 +1,46 @@
+\usepackage[utf8]{inputenc} % Permite digitar caracteres acentuados (UTF-8)
+\usepackage[T1]{fontenc} % Melhora a hifenização e saída de caracteres acentuados
+\usepackage[portuguese]{babel} % Ajusta o idioma para português do Brasil
+\usepackage{lmodern} % Usa a fonte Latin Modern (melhor qualidade no PDF)
+\usepackage{hyperref} % Ativa links e navegação clicável no PDF
+\usepackage{ragged2e} % Justificar texto com \justifying
+\usepackage{tikz} 
+\usepackage{transparent}
+\usepackage[absolute,overlay]{textpos}
+
+\usetheme{Berlin} % Define o tema principal da apresentação (tema Berlin)
+\useoutertheme{smoothbars} % Coloca barras horizontais no topo como navegação
+
+% title img
+\begin{textblock*}{10cm}(1cm,0.1cm)
+\hbox{
+  \includegraphics[width=2cm,height=1.22cm]{etc/lance.png}
+  \hspace*{0.7cm}
+  \includegraphics[width=1cm,height=1cm]{etc/ufrn-logo.png}
+  \hspace*{0.7cm}
+  \includegraphics[width=2.5cm,height=0.8cm]{etc/gppcom.png}
+  \hspace*{0.7cm}
+  \includegraphics[width=2.cm,height=1cm]{etc/cnpq.png}
+}
+\end{textblock*}
+% title
+\title[Padrão IC]{Streaming com equipamentos modernos em redes 5G do labsim}
+\setbeamerfont{footnote}{size=\tiny}
+\author[Victor Hugh]{%
+  Victor Hugh\thanks{Aluno de Ciências e Tecnologia, UFRN, Natal, RN, e-mail: victorhughsilva@outlook.com} \\[0.2cm]
+  Vicente Sousa\thanks{Dr., Prof., DCO/CT, UFRN, Natal, RN, e-mail: vicente.sousa@ufrn.br}
+}
+% background ufrn
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}[remember picture,overlay]
+      \node[opacity=0.3] at (current page.east) {
+        \includegraphics[width=0.7\paperwidth,height=0.7\paperheight]{etc/bras.png}
+      };
+  \end{tikzpicture}%
+}
+% inst
+\institute[UFRN • Gppcom • LANCE]{%
+  UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE\\%
+  Grupo de Pesquisa em Prototipagem Rápida de Soluções para Comunicação\\%
+  Leading Advanced Technologies Center of Excellence%
+}

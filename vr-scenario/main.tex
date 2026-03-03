@@ -1,0 +1,139 @@
+\documentclass[brazil]{beamer}
+\usepackage{template}
+\begin{document}
+
+% Slide de Título
+{
+    % Salva o template original do headline
+    \let\oldheadline\beamertemplateheadline
+    % Remove a barra superior
+    \setbeamertemplate{headline}{}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    % Restaura o headline para o restante do documento
+    \let\beamertemplateheadline\oldheadline
+}
+
+%================================================
+\begin{frame}{Sumário}
+    \tableofcontents
+\end{frame}
+
+%================================================
+\section{Introdução}
+\begin{frame}{Realidade aumentada com câmera 360}
+    \justifying
+    \hspace{0.5cm}Com o expansão da infraestrutura e equipamentos do LANCE, 
+    nos permitiu acesso a equipamentos modernos e novos horizontes para experimentos 
+    com novos paradigmas como o uso de realidade aumentada para acessar uma imagem
+    de uma câmera 360 conectados ao 5G.  
+\end{frame}
+
+\begin{frame}
+    \justifying
+    \hspace{0.5cm}Fotos oculus/câmera 360
+\end{frame}
+
+%================================================
+\section{Experimento}
+\begin{frame}{Visão geral no labsim.}
+    \justifying
+    \hspace{0.5cm}O principal objetivo do experimento pode ser dividido em duas
+    partes: usuários finais a serem conectados(MetaQuest3 e câmera insta one X) 
+    e os pacotes presentes no labsim, em especifico o pacote C em que utiliza 
+    Open5GS e srsRAN, que foi escolhido para resolver o problema.
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{etc/simu/obj1.png}
+        \caption{Pacote-C e usuários finais.}
+        \label{fig:gtp1}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}{Desafio Técnico}
+    \justifying
+    \hspace{0.5cm}Colocar depois
+\end{frame}
+
+\begin{frame}{Câmera insta 360 one X}
+    \justifying
+    \hspace{0.5cm}Para conectar a câmera ao celular, é necessário utilizar o
+    aplicativo disponível da empresa insta360 e o protocolo suportado pela
+    câmera, RTMP(Real-Time Messaging Protocol). Ao conectar a câmera via wifi, 
+    a imagem da câmera é transmitida pelo 5G que será conectada ao pacote C. 
+\end{frame}
+
+\begin{frame}{Óculos de realidade aumentada MetaQuest3}
+    \justifying
+    \hspace{0.5cm}O óculos MetaQuest3 pode ser conectado apenas pelo wifi, então
+    podemos conectar o óculos a nossa infraestrutura 5G utilizando de técnicas como
+    Fixed Wireless Acess(FWA) que pode ser disponibilizado por um dos celulares 
+    disponíveis no laboratório ou com um dispositivo especifico para FWA como os 
+    X doados para o laboratório pela brisanet.
+\end{frame}
+
+\begin{frame}
+    \justifying
+    \hspace{0.5cm}fotos FWA brisanet
+\end{frame}
+
+\begin{frame}{Solução de Arquitetura}
+    \justifying
+    \hspace{0.5cm}Agora que podemos conectar tanto o vr quanto a câmera 360 ao 
+    pacote C, precisamos criar uma forma de receber as imagens enviadas da câmera 
+    e servir ela para os usuários na rede, no nosso caso o vr. Para fazer isso
+    foi escolhido a ferramenta open-source Mediamtx com uma imagem do docker para 
+    não só receber a transmissão por RTMP mas também para servir com o protocolo 
+    webRTC.
+\end{frame}
+
+\begin{frame}{Implementação e Configurações}
+    \justifying
+    \hspace{0.5cm}fotos FWA brisanet
+\end{frame}
+
+%================================================
+\section{Resultados}
+\begin{frame}{Problemas encontrados}
+    \justifying
+    \hspace{0.5cm}Citar problemas
+\end{frame}
+
+\begin{frame}{Teste na infraestrutura}
+    \justifying
+    \hspace{0.5cm}Mostrar o funcionamento
+\end{frame}
+
+\begin{frame}
+    \justifying
+    \hspace{0.5cm}Medições de latência
+\end{frame}
+
+%================================================
+\section{Conclusão}
+\begin{frame}{Proximos passos}
+    \justifying
+    \hspace{0.5cm}Explicar o que o experimento implicou e como ele pode ser 
+    utilizado na prática em próximos passos.
+\end{frame}
+
+%================================================
+\section{Referências}
+%\bibitem{Ex2} citação Disponível em: {\url{link}}. Acesso em: .
+\begin{frame}[allowframebreaks]
+\small
+\begin{thebibliography}{99}
+\bibitem{flexric2}
+Mosaic5g. Flexric - br-flexric - GitLab. Disponível em: <{\url{https://gitlab.eurecom.fr/mosaic5g/flexric/-/tree/br-flexric}}>. Acesso em: 19 nov. 2025.
+\end{thebibliography}
+\end{frame}
+
+%================================================
+\section{Agradecimentos}
+\begin{frame}
+\centering
+O presente trabalho foi realizado com apoio do CNPq, Conselho Nacional de Desenvolvimento Científico e Tecnológico – Brasil
+\end{frame}
+\end{document}
