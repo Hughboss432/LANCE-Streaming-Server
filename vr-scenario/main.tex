@@ -33,11 +33,6 @@
     pela empresa brisanet.
 \end{frame}
 
-\begin{frame}
-    \justifying
-    \hspace{0.5cm}Fotos oculus/câmera 360/fwa
-\end{frame}
-
 %================================================
 \section{Experimento}
 \begin{frame}{Visão geral no labsim.}
@@ -50,13 +45,15 @@
         \centering
         \includegraphics[width=1\linewidth]{etc/simu/obj1.png}
         \caption{Pacote-C e usuários finais.}
-        \label{fig:gtp1}
     \end{figure} 
 \end{frame}
 
 \begin{frame}{Desafio Técnico}
     \justifying
-    \hspace{0.5cm}Colocar depois
+    \hspace{0.5cm}O principal desafio técnico no experimento foi identificar 
+    protocolos para diminuir o delay final da imagem no óculos vr, além de 
+    implementar o servidor utilizando a ferramenta open-source Mediamtx e 
+    configura-la para o nosso problema. 
 \end{frame}
 
 \begin{frame}{Câmera insta 360 one X}
@@ -65,6 +62,11 @@
     aplicativo disponível da empresa insta360 e o protocolo suportado pela
     câmera, RTMP(Real-Time Messaging Protocol). Ao conectar a câmera via wifi, 
     a imagem da câmera é transmitida pelo 5G que será conectada ao pacote C. 
+\end{frame}
+
+\begin{frame}
+    \justifying
+    \hspace{0.5cm}Fotos câmera
 \end{frame}
 
 \begin{frame}{Óculos de realidade aumentada MetaQuest3}
@@ -78,7 +80,12 @@
 
 \begin{frame}
     \justifying
-    \hspace{0.5cm}fotos FWA brisanet
+    \hspace{0.5cm}Fotos oculus
+\end{frame}
+
+\begin{frame}
+    \justifying
+    \hspace{0.5cm}Fotos FWA
 \end{frame}
 
 \begin{frame}{Solução de Arquitetura}
@@ -92,8 +99,11 @@
 \end{frame}
 
 \begin{frame}{Implementação e Configurações}
-    \justifying
-    \hspace{0.5cm}fotos FWA brisanet
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{etc/simu/arquitetura.png}
+        \caption{Streaming-Server no Pacote-C}
+    \end{figure} 
 \end{frame}
 
 %================================================
@@ -101,6 +111,14 @@
 \begin{frame}{Problemas encontrados}
     \justifying
     \hspace{0.5cm}Citar problemas
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{etc/simu/delay.png}
+        \caption{Conexão entre dispositivos de borda e protocolos.}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Teste na infraestrutura}
