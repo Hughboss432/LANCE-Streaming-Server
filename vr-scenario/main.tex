@@ -23,17 +23,14 @@
 
 %================================================
 \section{Introdução}
-\begin{frame}{Realidade aumentada com câmera 360}
+\begin{frame}{Equipamentos no labsim}
     \justifying
-    \hspace{0.5cm}Com o expansão da infraestrutura e equipamentos do LANCE, 
-    nos permitiu acesso a equipamentos modernos e novos horizontes para experimentos 
-    com novos paradigmas como o uso de realidade aumentada para acessar uma imagem
-    de uma câmera 360 conectados ao 5G.  
-\end{frame}
-
-\begin{frame}
-    \justifying
-    \hspace{0.5cm}Fotos oculus/câmera 360
+    \hspace{0.5cm}Com o expansão da infraestrutura e equipamentos do LANCE nos 
+    permitiu acesso a equipamentos modernos e novos horizontes para experimentos 
+    com novos paradigmas, como o uso de realidade aumentada para acessar uma imagem
+    de uma câmera 360 conectados ao 5G. Além de aparelhos que nos permitam acesso 
+    ao 5G como por Fixed Wireless Access(FWA) como os NX620v doados para o laboratório 
+    pela empresa brisanet.
 \end{frame}
 
 %================================================
@@ -48,13 +45,15 @@
         \centering
         \includegraphics[width=1\linewidth]{etc/simu/obj1.png}
         \caption{Pacote-C e usuários finais.}
-        \label{fig:gtp1}
-    \end{figure} 
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Desafio Técnico}
     \justifying
-    \hspace{0.5cm}Colocar depois
+    \hspace{0.5cm}O principal desafio técnico no experimento foi identificar 
+    protocolos para diminuir o delay final da imagem no óculos vr, além de 
+    implementar o servidor utilizando a ferramenta open-source Mediamtx e 
+    configura-la para o nosso problema. 
 \end{frame}
 
 \begin{frame}{Câmera insta 360 one X}
@@ -65,18 +64,49 @@
     a imagem da câmera é transmitida pelo 5G que será conectada ao pacote C. 
 \end{frame}
 
+\begin{frame}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/c1.jpg}
+
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/c2.jpg}
+    \end{columns}
+\end{frame}
+
 \begin{frame}{Óculos de realidade aumentada MetaQuest3}
     \justifying
     \hspace{0.5cm}O óculos MetaQuest3 pode ser conectado apenas pelo wifi, então
     podemos conectar o óculos a nossa infraestrutura 5G utilizando de técnicas como
-    Fixed Wireless Acess(FWA) que pode ser disponibilizado por um dos celulares 
+    Fixed Wireless Access(FWA) que pode ser disponibilizado por um dos celulares 
     disponíveis no laboratório ou com um dispositivo especifico para FWA como os 
     X doados para o laboratório pela brisanet.
 \end{frame}
 
 \begin{frame}
-    \justifying
-    \hspace{0.5cm}fotos FWA brisanet
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/vr1.jpg}
+
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/vr2.jpg}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/fwa1.jpg}
+
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/fwa2.jpg}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Solução de Arquitetura}
@@ -90,15 +120,27 @@
 \end{frame}
 
 \begin{frame}{Implementação e Configurações}
-    \justifying
-    \hspace{0.5cm}fotos FWA brisanet
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/arquitetura.png}
+        \caption{Streaming-Server no Pacote-C}
+    \end{figure} 
 \end{frame}
 
 %================================================
 \section{Resultados}
 \begin{frame}{Problemas encontrados}
-    \justifying
-    \hspace{0.5cm}Citar problemas
+    \begin{itemize}
+        \item Delay de Streaming alto encontrado e limitado pela câmera.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/delay.png}
+        \caption{Conexão entre dispositivos de borda e protocolos.}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Teste na infraestrutura}
@@ -107,16 +149,36 @@
 \end{frame}
 
 \begin{frame}
-    \justifying
-    \hspace{0.5cm}Medições de latência
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/delayideal.png}
+        \caption{Medição inicial de delay ideal}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{etc/simu/delay5g.png}
+        \caption{Medição inicial de delay 5G}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.45\linewidth]{etc/simu/delayc.jpeg}
+        \caption{Medição inicial de delay câmera - celular}
+    \end{figure} 
 \end{frame}
 
 %================================================
 \section{Conclusão}
 \begin{frame}{Proximos passos}
     \justifying
-    \hspace{0.5cm}Explicar o que o experimento implicou e como ele pode ser 
-    utilizado na prática em próximos passos.
+    \hspace{0.5cm}Com esse experimento, podemos concluir que novos horizontes de tecnologias
+    modernas foram e podem ser adicionadas a infraestrutura do LANCE para novos experimentos 
+    em novos paradigmas envolvendo o 5G, como realidade aumentada e Low-latency streaming.
 \end{frame}
 
 %================================================
@@ -125,8 +187,12 @@
 \begin{frame}[allowframebreaks]
 \small
 \begin{thebibliography}{99}
-\bibitem{flexric2}
-Mosaic5g. Flexric - br-flexric - GitLab. Disponível em: <{\url{https://gitlab.eurecom.fr/mosaic5g/flexric/-/tree/br-flexric}}>. Acesso em: 19 nov. 2025.
+\bibitem{mediamtx}
+bluenviron/mediamtx. Disponível em: <{\url{https://github.com/bluenviron/mediamtx}}>. Acesso em: 23 fev. 2026.
+\bibitem{overflow}
+nginx live streaming too high latency 45 sec. Disponível em: <{\url{https://stackoverflow.com/questions/72323486/nginxlive-streaming-too-high-latency-45-sec}}>. Acesso em: 12 fev. 2026.
+\bibitem{stopwatch}
+Online Stopwatch - easy to use. Disponível em: <{\url{https://www.timeanddate.com/stopwatch/}}>. Acesso em: 05 mar. 2026.
 \end{thebibliography}
 \end{frame}
 
